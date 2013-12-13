@@ -13,7 +13,7 @@ class pacemaker::params {
   }
 
   $config_file_path = $::osfamily ? {
-    default => '/etc/pacemaker/pacemaker.conf',
+    default => '',
   }
 
   $config_file_mode = $::osfamily ? {
