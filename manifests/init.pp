@@ -15,8 +15,8 @@ class pacemaker (
   $package_ensure            = 'present',
 
   $service_name              = $pacemaker::params::service_name,
-  $service_ensure            = 'running',
-  $service_enable            = true,
+  $service_ensure            = undef,
+  $service_enable            = false,
 
   $config_file_path          = $pacemaker::params::config_file_path,
   $config_file_require       = 'Package[pacemaker]',
