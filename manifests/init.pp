@@ -74,6 +74,7 @@ class pacemaker (
   if $package_ensure == 'absent' {
     $manage_service_enable = undef
     $manage_service_ensure = stopped
+    $manage_service_require = undef
     $config_dir_ensure = absent
     $config_file_ensure = absent
   } else {
@@ -87,6 +88,7 @@ class pacemaker (
       'undef' => undef,
       default => $service_ensure,
     }
+    $manage_service_require = Package['pacemaker']
     $config_dir_ensure = directory
     $config_file_ensure = present
   }
