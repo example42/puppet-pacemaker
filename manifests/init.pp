@@ -142,6 +142,7 @@ class pacemaker (
       ensure     => $pacemaker::manage_service_ensure,
       name       => $pacemaker::service_name,
       enable     => $pacemaker::manage_service_enable,
+      require    => $pacemaker::manage_service_require,
     }
   }
 
